@@ -1,0 +1,61 @@
+import type React from "react"
+import type { Metadata } from "next"
+import { JetBrains_Mono, Inter } from "next/font/google"
+import { Analytics } from "@vercel/analytics/react"
+import { Suspense } from "react"
+import { ThemeProvider } from "@/components/theme-provider"
+import "./globals.css"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+})
+
+export const metadata: Metadata = {
+  title: "Abreham Nigus - Full-Stack Developer & Data Engineer",
+  description:
+    "Professional portfolio of Abreham Nigus - Full-Stack Developer and Junior Data Engineer specializing in MERN stack and big data solutions.",
+  generator: "v0.app",
+  keywords: [
+    "Full-Stack Developer",
+    "Data Engineer",
+    "React",
+    "Node.js",
+    "Python",
+    "Big Data",
+    "Apache Kafka",
+    "Spark",
+  ],
+  authors: [{ name: "Abreham Nigus" }],
+  openGraph: {
+    title: "Abreham Nigus - Full-Stack Developer & Data Engineer",
+    description: "Professional portfolio showcasing modern web applications and data engineering solutions.",
+    url: "https://abrehamnigus.vercel.app",
+    siteName: "Abreham Nigus Portfolio",
+    type: "website",
+  },
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} antialiased`} suppressHydrationWarning>
+      <body className="font-sans">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
+          <Suspense fallback={null}>{children}</Suspense>
+          <Analytics />
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
