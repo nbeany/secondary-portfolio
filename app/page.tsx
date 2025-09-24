@@ -498,12 +498,7 @@ function AboutSection() {
               viewport={{ once: true }}
               className="flex justify-center"
             >
-              <Button size="lg" className="animate-glow font-mono" asChild>
-                <a href="/resume.pdf" target="_blank" className="flex items-center gap-2" rel="noreferrer">
-                  <Download className="h-5 w-5" />
-                  Download Resume
-                </a>
-              </Button>
+            
             </motion.div>
           </motion.div>
 
@@ -534,32 +529,12 @@ function AboutSection() {
                 </div>
 
                 <div className="pt-6 border-t border-border">
-                  <h3 className="text-xl font-bold mb-4 font-mono text-primary">Let's Connect</h3>
-                  <div className="flex flex-col gap-3">
-                    <Button variant="outline" className="justify-start font-mono bg-transparent" asChild>
-                      <a href="mailto:abrehamnigus1996@gmail.com" className="flex items-center gap-3">
-                        <Mail className="h-4 w-4" />
-                        abrehamnigus1996@gmail.com
-                      </a>
-                    </Button>
-                    <Button variant="outline" className="justify-start font-mono bg-transparent" asChild>
-                      <a
-                        href="https://t.me/nbeany"
-                        target="_blank"
-                        className="flex items-center gap-3"
-                        rel="noreferrer"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                        Telegram: @nbeany
-                      </a>
-                    </Button>
-                    <Button variant="outline" className="justify-start font-mono bg-transparent" asChild>
-                      <a href="tel:+251908288112" className="flex items-center gap-3">
-                        <Phone className="h-4 w-4" />
-                        +251908288112
-                      </a>
-                    </Button>
-                  </div>
+                    <Button size="lg" className="animate-glow font-mono" asChild>
+                <a href="/resume.pdf" target="_blank" className="flex items-center gap-2" rel="noreferrer">
+                  <Download className="h-5 w-5" />
+                  Download Resume
+                </a>
+              </Button>
                 </div>
               </CardContent>
             </Card>
