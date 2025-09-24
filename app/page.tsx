@@ -26,7 +26,7 @@ import {
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useTheme } from "next-themes"
 import type * as THREE from "three"
-
+import photo from "../public/photo.jpg"
 // 3D Floating Cube Component
 function FloatingCube() {
   const meshRef = useRef<THREE.Mesh>(null)
@@ -452,10 +452,12 @@ function AboutSection() {
                     <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-primary/20">
                       <Camera className="h-10 w-10 text-primary/60" />
                     </div>
-                    <p className="text-muted-foreground font-mono text-sm font-medium">Professional Photo</p>
-                    <p className="text-xs text-muted-foreground/70 mt-2 max-w-48">
-                      Upload your headshot here for a complete portfolio
-                    </p>
+                   <img
+                      src={photo.src}
+                      alt="Profile Photo"
+                      className="w-64 h-64 rounded-full mx-auto mb-4 object-cover border border-primary/20"
+                    />
+
                   </div>
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center shadow-lg">
