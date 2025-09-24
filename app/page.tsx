@@ -437,7 +437,7 @@ function AboutSection() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Photo Section */}
+        {/* Photo Section */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -447,18 +447,12 @@ function AboutSection() {
           >
             <div className="flex justify-center">
               <div className="relative">
-                <div className="w-80 h-80 bg-gradient-to-br from-primary/10 via-primary/5 to-background rounded-3xl flex items-center justify-center border border-primary/20 hover:border-primary/40 transition-all duration-500 shadow-2xl hover:shadow-primary/10">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-primary/20">
-                      <Camera className="h-10 w-10 text-primary/60" />
-                    </div>
-                   <img
-                      src={photo.src}
-                      alt="Profile Photo"
-                      className="w-64 h-64 rounded-full mx-auto mb-4 object-cover border border-primary/20"
-                    />
-
-                  </div>
+                <div className="w-80 h-80 bg-gradient-to-br from-primary/10 via-primary/5 to-background rounded-3xl overflow-hidden border border-primary/20 hover:border-primary/40 transition-all duration-500 shadow-2xl hover:shadow-primary/10">
+                  <img
+                    src="/images/photo.jpg"
+                    alt="Abreham Nigus - Professional Photo"
+                    className="w-full h-full object-cover object-center "
+                  />
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center shadow-lg">
                   <User className="h-10 w-10 text-primary-foreground" />
