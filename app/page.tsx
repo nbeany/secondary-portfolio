@@ -644,6 +644,7 @@ function ProjectsSection() {
       year: "2025",
       category: "Data Engineering",
       image: "/big-data-fraud-detection-dashboard-with-charts-and.jpg",
+      link: "https://your-link.com/fraud-detection",
     },
     {
       title: "Amazon Clone",
@@ -652,6 +653,7 @@ function ProjectsSection() {
       year: "2025",
       category: "Full-Stack",
       image: "/amazon-ecommerce-website-homepage-with-products-an.jpg",
+      link: "https://e-585b2.web.app",
     },
     {
       title: "Hotel Booking Website",
@@ -660,6 +662,7 @@ function ProjectsSection() {
       year: "2024",
       category: "Frontend",
       image: "/hotel-booking-system-website-ui-with-calendar-and.jpg",
+      link: "https://github.com/nbeany/Hotel-booking",
     },
     {
       title: "Bitcoin Real-Time Dashboard",
@@ -668,6 +671,7 @@ function ProjectsSection() {
       year: "2024",
       category: "Data Analytics",
       image: "/bitcoin-cryptocurrency-dashboard-with-price-charts.jpg",
+      link: "https://github.com/nbeany/Data",
     },
     {
       title: "Apple Stock Market Data Dashboard",
@@ -676,6 +680,7 @@ function ProjectsSection() {
       year: "2024",
       category: "Data Analytics",
       image: "/apple-stock-market-dashboard-with-charts-and-metr.jpg",
+      link: "https://github.com/nbeany/Data",
     },
     {
       title: "E-commerce Website",
@@ -684,6 +689,7 @@ function ProjectsSection() {
       year: "2024",
       category: "Frontend",
       image: "/ecommerce-website-homepage-with-products-and-shoppi.jpg",
+      link: "https://luxe-store-flax.vercel.app",
     },
     {
       title: "Apple Website Clone",
@@ -692,6 +698,7 @@ function ProjectsSection() {
       year: "2024",
       category: "Full-Stack",
       image: "/apple-website-homepage-with-sleek-product-showcase.jpg",
+      link: "https://github.com/nbeany/Apple-clone",
     },
     {
       title: "Small Restaurant Website",
@@ -700,6 +707,7 @@ function ProjectsSection() {
       year: "2024",
       category: "Frontend",
       image: "/restaurant-website-ui-with-menu-and-reservation-se.jpg",
+      link: "https://github.com/nbeany/Restaurant",
     },
     {
       title: "Netflix Clone",
@@ -708,6 +716,7 @@ function ProjectsSection() {
       year: "2025",
       category: "Full-Stack",
       image: "/netflix-streaming-platform-homepage-with-movie-pos.jpg",
+      link: "https://netflix-clone-6dnm-al8ng4sej.vercel.app",
     },
     {
       title: "Boss Electronics Website",
@@ -716,6 +725,7 @@ function ProjectsSection() {
       year: "2025",
       category: "Frontend",
       image: "/electronics-company-website-with-product-catalog-a.jpg",
+      link: "https://boss-electronics-kofw.vercel.app",
     },
     {
       title: "Rehoboth International Athletics Website",
@@ -724,8 +734,9 @@ function ProjectsSection() {
       year: "2025",
       category: "Frontend",
       image: "/sports-agency-website-for-athletes-with-modern-ui.jpg",
+      link: "https://new-xi-taupe.vercel.app",
     },
-];
+  ]
 
   return (
     <section id="projects" className="py-20 px-4">
@@ -791,12 +802,15 @@ function ProjectsSection() {
                   </div>
 
                   <Button
+                    asChild
                     variant="outline"
                     size="sm"
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-200 bg-transparent hover:scale-105 hover:shadow-lg"
                   >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    View Project
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      View Project
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
