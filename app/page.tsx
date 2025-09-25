@@ -654,12 +654,52 @@ function ProjectsSection() {
       image: "/amazon-ecommerce-website-homepage-with-products-an.jpg",
     },
     {
+      title: "Hotel Booking Website",
+      description: "Responsive hotel booking platform with room management, availability, and customer details.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      year: "2024",
+      category: "Frontend",
+      image: "/hotel-booking-system-website-ui-with-calendar-and.jpg",
+    },
+    {
       title: "Bitcoin Real-Time Dashboard",
       description: "Interactive dashboard monitoring Bitcoin prices with trend analysis and predictions.",
       technologies: ["React", "Node.js", "D3.js", "WebSocket API"],
       year: "2024",
       category: "Data Analytics",
       image: "/bitcoin-cryptocurrency-dashboard-with-price-charts.jpg",
+    },
+    {
+      title: "Apple Stock Market Data Dashboard",
+      description: "Comprehensive stock analysis dashboard with interactive charts and performance metrics.",
+      technologies: ["React", "ECharts", "REST API", "Redux"],
+      year: "2024",
+      category: "Data Analytics",
+      image: "/apple-stock-market-dashboard-with-charts-and-metr.jpg",
+    },
+    {
+      title: "E-commerce Website",
+      description: "Fully responsive online store with product listings, shopping cart, and checkout.",
+      technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+      year: "2024",
+      category: "Frontend",
+      image: "/ecommerce-website-homepage-with-products-and-shoppi.jpg",
+    },
+    {
+      title: "Apple Website Clone",
+      description: "Pixel-perfect recreation with responsive design and smooth animations.",
+      technologies: ["React", "Node.js", "MySQL", "CSS"],
+      year: "2024",
+      category: "Full-Stack",
+      image: "/apple-website-homepage-with-sleek-product-showcase.jpg",
+    },
+    {
+      title: "Small Restaurant Website",
+      description: "Responsive restaurant website with digital menu, reservations, and modern UI.",
+      technologies: ["HTML", "CSS", "JavaScript", "React"],
+      year: "2024",
+      category: "Frontend",
+      image: "/restaurant-website-ui-with-menu-and-reservation-se.jpg",
     },
     {
       title: "Netflix Clone",
@@ -670,14 +710,6 @@ function ProjectsSection() {
       image: "/netflix-streaming-platform-homepage-with-movie-pos.jpg",
     },
     {
-      title: "Apple Website Clone",
-      description: "Pixel-perfect recreation with responsive design and smooth animations.",
-      technologies: ["React", "Node.js", "MySQL", "CSS"],
-      year: "2024",
-      category: "Frontend",
-      image: "/apple-website-homepage-with-sleek-product-showcase.jpg",
-    },
-    {
       title: "Boss Electronics Website",
       description: "Corporate website showcasing products with modern design and interactions.",
       technologies: ["React", "CSS", "JavaScript"],
@@ -685,7 +717,15 @@ function ProjectsSection() {
       category: "Frontend",
       image: "/electronics-company-website-with-product-catalog-a.jpg",
     },
-  ]
+    {
+      title: "Rehoboth International Athletics Website",
+      description: "Professional website for global athlete representation with a modern design.",
+      technologies: ["React", "CSS", "JavaScript"],
+      year: "2025",
+      category: "Frontend",
+      image: "/sports-agency-website-for-athletes-with-modern-ui.jpg",
+    },
+];
 
   return (
     <section id="projects" className="py-20 px-4">
