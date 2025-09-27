@@ -148,7 +148,12 @@ function Navigation() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="text-xl font-bold text-primary font-mono">AN</div>
+            
+            <a href="/" className="text-xl font-bold text-primary font-mono">
+  AN
+</a>
+
+            
             <div className="hidden md:flex items-center space-x-8">
               {[
                 { href: "#about", label: "About" },
