@@ -729,7 +729,7 @@ function ProjectsSection() {
       technologies: ["React", "CSS", "JavaScript"],
       year: "2025",
       category: "Frontend",
-      image: "/electronics-company-website-with-product-catalog-a.jpg",
+      image: "/boss.jpg",
       link: "https://boss-electronics-kofw.vercel.app",
     },
     {
@@ -738,7 +738,7 @@ function ProjectsSection() {
       technologies: ["React", "CSS", "JavaScript"],
       year: "2025",
       category: "Frontend",
-      image: "/sports-agency-website-for-athletes-with-modern-ui.jpg",
+      image: "/run.jpg",
       link: "https://new-xi-taupe.vercel.app",
     },
   ]
