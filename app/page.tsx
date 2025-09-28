@@ -702,7 +702,7 @@ function ProjectsSection() {
       technologies: ["React", "Node.js", "MySQL", "CSS"],
       year: "2024",
       category: "Full-Stack",
-      image: "/apple-website-homepage-with-sleek-product-showcase.jpg",
+      image: "/app.jfif",
       link: "https://github.com/nbeany/Apple-clone",
     },
     {
@@ -711,7 +711,7 @@ function ProjectsSection() {
       technologies: ["HTML", "CSS", "JavaScript", "React"],
       year: "2024",
       category: "Frontend",
-      image: "/restaurant-website-ui-with-menu-and-reservation-se.jpg",
+      image: "/re.jfif",
       link: "https://github.com/nbeany/Restaurant",
     },
     {
