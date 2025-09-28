@@ -720,7 +720,7 @@ function ProjectsSection() {
       technologies: ["React", "TMDB API", "Firebase", "CSS"],
       year: "2025",
       category: "Full-Stack",
-      image: "/netflix-streaming-platform-homepage-with-movie-pos.jpg",
+      image: "/net.jfif",
       link: "https://netflix-clone-6dnm-al8ng4sej.vercel.app",
     },
     {
