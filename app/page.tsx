@@ -657,7 +657,7 @@ function ProjectsSection() {
       technologies: ["React", "Express", "Firebase", "Chapa"],
       year: "2025",
       category: "Full-Stack",
-      image: "/amazon-ecommerce-website-homepage-with-products-an.jpg",
+      image: "/amazon.jpg",
       link: "https://e-585b2.web.app",
     },
     {
@@ -666,7 +666,7 @@ function ProjectsSection() {
       technologies: ["HTML", "CSS", "JavaScript"],
       year: "2024",
       category: "Frontend",
-      image: "/hotel-booking-system-website-ui-with-calendar-and.jpg",
+      image: "https://www.wpexplorer.com/wp-content/uploads/Paradise-Cove.jpg",
       link: "https://github.com/nbeany/Hotel-booking",
     },
     {
@@ -684,7 +684,7 @@ function ProjectsSection() {
       technologies: ["React", "ECharts", "REST API", "Redux"],
       year: "2024",
       category: "Data Analytics",
-      image: "/apple-stock-market-dashboard-with-charts-and-metr.jpg",
+      image: "/apple.jpg",
       link: "https://github.com/nbeany/Data",
     },
     {
@@ -693,7 +693,7 @@ function ProjectsSection() {
       technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
       year: "2024",
       category: "Frontend",
-      image: "/ecommerce-website-homepage-with-products-and-shoppi.jpg",
+      image: "/ec.jfif",
       link: "https://luxe-store-flax.vercel.app",
     },
     {
@@ -834,9 +834,9 @@ function SkillsSection() {
       title: "Frontend Development",
       skills: [
         { name: "React", level: 92 },
-        { name: "TypeScript", level: 88 },
-        { name: "JavaScript", level: 95 },
-        { name: "Tailwind CSS", level: 90 },
+        { name: "TypeScript", level: 58 },
+        { name: "JavaScript", level: 85 },
+        { name: "Tailwind CSS", level: 80 },
         { name: "HTML/CSS", level: 96 },
       ],
     },
