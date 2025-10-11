@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import emailjs from "@emailjs/browser"
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls, Environment, Float, Text3D, Center } from "@react-three/drei"
 import { Suspense, useRef, useState, useEffect } from "react"
@@ -200,9 +200,14 @@ function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <motion.div className="text-xl font-bold text-primary font-mono" whileHover={{ scale: 1.05 }}>
-            AN
-          </motion.div>
+          <motion.div
+  className="text-xl font-bold text-primary font-mono cursor-pointer"
+  whileHover={{ scale: 1.05 }}
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+>
+  AN
+</motion.div>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -345,7 +350,7 @@ function HeroSection() {
             transition={{ delay: 1 }}
           >
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-mono text-primary font-medium">Available for opportunities</span>
+            <span className="text-sm font-mono text-primary font-medium">Available for Jobs</span>
           </motion.div>
 
           <motion.div
@@ -382,36 +387,12 @@ function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
           >
-            <Button
-              size="lg"
-              className="font-mono px-8 py-3 bg-primary hover:bg-primary/90 hover:scale-105 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
-              asChild
-            >
-              <a href="#projects" className="flex items-center gap-2">
-                <ExternalLink className="h-4 w-4" />
-                View Projects
-              </a>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="font-mono px-8 py-3 bg-transparent hover:bg-primary hover:text-primary-foreground hover:scale-105 hover:shadow-lg transition-all duration-300"
-              asChild
-            >
-              <a href="#contact" className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                Get In Touch
-              </a>
-            </Button>
+            
+          
           </motion.div>
         </motion.div>
 
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-        >
+        
           <motion.div
             className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center"
             animate={{ y: [0, 8, 0] }}
@@ -424,7 +405,7 @@ function HeroSection() {
             />
           </motion.div>
         </motion.div>
-      </motion.div>
+      
     </section>
   )
 }
@@ -953,7 +934,6 @@ function SkillsSection() {
 
 
 
-// Contact Section
 function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -963,31 +943,33 @@ function ContactSection() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
+    setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Here you can integrate with your email service
-    // For now, we'll just simulate the submission
-    console.log("Form submitted:", formData)
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formData,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+      alert("Message sent successfully!")
+      setFormData({ name: "", email: "", subject: "", message: "" })
+    } catch (error) {
+      console.error(error)
+      alert("Failed to send message. Please try again later.")
+    }
 
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" })
     setIsSubmitting(false)
-
-    // You can add success notification here
-    alert("Message sent successfully!")
   }
 
   return (
@@ -1000,7 +982,9 @@ function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance font-mono">Let's Work Together</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance font-mono">
+            Let's Work Together
+          </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty font-mono">
             Ready to bring your ideas to life? Let's discuss your next project.
@@ -1016,12 +1000,17 @@ function ContactSection() {
           >
             <Card className="p-8 animate-glow">
               <CardContent>
-                <h3 className="text-2xl font-bold mb-6 font-mono text-primary">Send Message</h3>
+                <h3 className="text-2xl font-bold mb-6 font-mono text-primary">
+                  Send Message
+                </h3>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium font-mono text-foreground">
+                      <label
+                        htmlFor="name"
+                        className="text-sm font-medium font-mono text-foreground"
+                      >
                         Name *
                       </label>
                       <input
@@ -1037,7 +1026,10 @@ function ContactSection() {
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium font-mono text-foreground">
+                      <label
+                        htmlFor="email"
+                        className="text-sm font-medium font-mono text-foreground"
+                      >
                         Email *
                       </label>
                       <input
@@ -1054,7 +1046,10 @@ function ContactSection() {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium font-mono text-foreground">
+                    <label
+                      htmlFor="subject"
+                      className="text-sm font-medium font-mono text-foreground"
+                    >
                       Subject *
                     </label>
                     <input
@@ -1070,7 +1065,10 @@ function ContactSection() {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium font-mono text-foreground">
+                    <label
+                      htmlFor="message"
+                      className="text-sm font-medium font-mono text-foreground"
+                    >
                       Message *
                     </label>
                     <textarea
@@ -1085,7 +1083,12 @@ function ContactSection() {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full animate-glow font-mono" disabled={isSubmitting}>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full animate-glow font-mono"
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? (
                       <>
                         <div className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin mr-2" />
@@ -1103,6 +1106,7 @@ function ContactSection() {
             </Card>
           </motion.div>
 
+          {/* Right column: Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -1147,10 +1151,6 @@ function ContactSection() {
                 </div>
 
                 <div className="space-y-6">
-                  
-
-                  
-
                   <div className="pt-6 border-t border-border">
                     <p className="text-sm text-muted-foreground font-mono leading-relaxed">
                       Available for freelance projects, full-time opportunities, and collaborations. Response time:
@@ -1180,7 +1180,7 @@ function Footer() {
           {/* Copyright */}
           <div className="text-center space-y-2">
             <p className="text-muted-foreground font-mono text-sm">© 2025 Abreham Nigus. All rights reserved.</p>
-            <p className="text-muted-foreground/70 font-mono text-xs">Built with React, Next.js & Three.js</p>
+           
           </div>
         </div>
       </div>
