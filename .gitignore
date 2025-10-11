@@ -28,3 +28,5 @@ next-env.d.ts
 # local env files
 .env.local
 .env.development.local
+
+.vercel

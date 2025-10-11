@@ -515,13 +515,19 @@ function AboutSection() {
                 </div>
 
                 <div className="pt-6 border-t border-border">
-                    <Button size="lg" className="animate-glow font-mono" asChild>
-                <a href="/resume.pdf" target="_blank" className="flex items-center gap-2" rel="noreferrer">
-                  <Download className="h-5 w-5" />
-                  Download Resume
-                </a>
-              </Button>
-                </div>
+  <Button size="lg" className="animate-glow font-mono" asChild>
+    <a
+      href="https://drive.google.com/file/d/1S8ok6NUKrcReRavVE4cxhrCcjdWY8ylb/view?usp=sharing"
+      target="_blank"
+      rel="noreferrer"
+      className="flex items-center gap-2"
+    >
+      <Download className="h-5 w-5" />
+      Download Resume
+    </a>
+  </Button>
+</div>
+
               </CardContent>
             </Card>
           </motion.div>

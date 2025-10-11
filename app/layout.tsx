@@ -20,6 +20,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Abreham Nigus - Full-Stack Developer & Data Engineer",
+   icons: {
+    icon: "/favicon.ico", 
+  },
   description:
     "Professional portfolio of Abreham Nigus - Full-Stack Developer and Junior Data Engineer specializing in MERN stack and big data solutions.",
   keywords: [
@@ -32,6 +35,7 @@ export const metadata: Metadata = {
     "Apache Kafka",
     "Spark",
   ],
+ 
   authors: [{ name: "Abreham Nigus" }],
   openGraph: {
     title: "Abreham Nigus - Full-Stack Developer & Data Engineer",
