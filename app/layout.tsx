@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   title: "Abreham Nigus - Full-Stack Developer & Data Engineer",
   description:
     "Professional portfolio of Abreham Nigus - Full-Stack Developer and Junior Data Engineer specializing in MERN stack and big data solutions.",
-  generator: "v0.app",
   keywords: [
     "Full-Stack Developer",
     "Data Engineer",
