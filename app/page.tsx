@@ -27,6 +27,10 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useTheme } from "next-themes"
 import type * as THREE from "three"
 import photo from "../public/photo.jpg"
+import { FaReact, FaJs, FaPython, FaNodeJs, FaHtml5, FaCss3Alt, FaDocker, FaGitAlt } from "react-icons/fa"
+import { SiTypescript, SiTailwindcss, SiPostgresql, SiMysql, SiApachekafka, SiApachehadoop, SiPowers, SiExpress, SiFirebase } from "react-icons/si"
+import { JSX } from "react/jsx-runtime"
+
 // 3D Floating Cube Component
 function FloatingCube() {
   const meshRef = useRef<THREE.Mesh>(null)
@@ -828,49 +832,53 @@ function ProjectsSection() {
 }
 
 // Skills Section with 3D Elements and Progress Bars
+const skillIconMap: Record<string, JSX.Element> = {
+  React: <FaReact className="text-blue-500 w-12 h-12" />,
+  "TypeScript": <SiTypescript className="text-blue-600 w-12 h-12" />,
+  "JavaScript": <FaJs className="text-yellow-400 w-12 h-12" />,
+  "Tailwind CSS": <SiTailwindcss className="text-teal-400 w-12 h-12" />,
+  "HTML/CSS": (
+    <div className="flex gap-1">
+      <FaHtml5 className="text-orange-500 w-6 h-6" />
+      <FaCss3Alt className="text-blue-600 w-6 h-6" />
+    </div>
+  ),
+  "Node.js": <FaNodeJs className="text-green-600 w-12 h-12" />,
+  Python: <FaPython className="text-blue-400 w-12 h-12" />,
+  "Express.js": <SiExpress className="text-gray-800 w-12 h-12" />,
+  PostgreSQL: <SiPostgresql className="text-blue-700 w-12 h-12" />,
+  MySQL: <SiMysql className="text-blue-500 w-12 h-12" />,
+  "Apache Spark": <SiApachekafka className="text-purple-600 w-12 h-12" />, // substitute icon
+  "Apache Kafka": <SiApachekafka className="text-orange-500 w-12 h-12" />,
+  "Hadoop (HDFS)": <SiApachehadoop className="text-orange-600 w-12 h-12" />,
+  "ETL Pipelines": <FaGitAlt className="text-gray-800 w-12 h-12" />,
+  PowerBI: <SiPowers className="text-yellow-500 w-12 h-12" />,
+  "Git & GitHub": <FaGitAlt className="text-orange-500 w-12 h-12" />,
+  Docker: <FaDocker className="text-blue-500 w-12 h-12" />,
+  Firebase: <SiFirebase className="text-yellow-400 w-12 h-12" />,
+
+  "Webpack/Vite": <FaJs className="text-purple-500 w-12 h-12" />, // substitute icon
+};
+
 function SkillsSection() {
   const skillCategories = [
     {
       title: "Frontend Development",
-      skills: [
-        { name: "React", level: 92 },
-        { name: "TypeScript", level: 58 },
-        { name: "JavaScript", level: 85 },
-        { name: "Tailwind CSS", level: 80 },
-        { name: "HTML/CSS", level: 96 },
-      ],
+      skills: ["React", "TypeScript", "JavaScript", "Tailwind CSS", "HTML/CSS"],
     },
     {
       title: "Backend & Languages",
-      skills: [
-        { name: "Node.js", level: 87 },
-        { name: "Python", level: 85 },
-        { name: "Express.js", level: 89 },
-        { name: "PostgreSQL", level: 82 },
-        { name: "MySQL", level: 80 },
-      ],
+      skills: ["Node.js", "Python", "Express.js", "PostgreSQL", "MySQL"],
     },
     {
       title: "Big Data & Data Engineering",
-      skills: [
-        { name: "Apache Spark", level: 78 },
-        { name: "Apache Kafka", level: 75 },
-        { name: "Hadoop (HDFS)", level: 72 },
-        { name: "ETL Pipelines", level: 85 },
-        { name: "Power BI", level: 88 },
-      ],
+      skills: ["Apache Spark", "Apache Kafka", "Hadoop (HDFS)", "ETL Pipelines", "PowerBI"],
     },
     {
       title: "Tools & Technologies",
-      skills: [
-        { name: "Git & GitHub", level: 93 },
-        { name: "Docker", level: 76 },
-        { name: "Firebase", level: 84 },
-        { name: "AWS", level: 70 },
-        { name: "Webpack/Vite", level: 82 },
-      ],
+      skills: ["Git & GitHub", "Docker", "Firebase",  "Webpack/Vite"],
     },
-  ]
+  ];
 
   return (
     <section id="skills" className="py-20 px-4 bg-muted/30 relative overflow-hidden">
@@ -917,60 +925,19 @@ function SkillsSection() {
                     {category.title}
                   </h3>
 
-                  <div className="space-y-6">
+                  <div className="flex flex-wrap gap-6 justify-center">
                     {category.skills.map((skill, skillIndex) => (
                       <motion.div
-                        key={skill.name}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: skillIndex * 0.1 }}
+                        key={skill}
+                        whileHover={{ scale: 1.2 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: skillIndex * 0.1 }}
                         viewport={{ once: true }}
-                        className="space-y-2"
+                        className="flex flex-col items-center gap-2"
                       >
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm font-medium font-mono text-foreground">{skill.name}</span>
-                          <motion.span
-                            className="text-sm font-bold text-primary font-mono"
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ duration: 0.8, delay: skillIndex * 0.1 + 0.5 }}
-                            viewport={{ once: true }}
-                          >
-                            {skill.level}%
-                          </motion.span>
-                        </div>
-                        <div className="relative h-2 bg-muted rounded-full overflow-hidden">
-                          <motion.div
-                            className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary via-primary/90 to-primary/80 rounded-full shadow-sm"
-                            initial={{ width: 0, opacity: 0.7 }}
-                            whileInView={{
-                              width: `${skill.level}%`,
-                              opacity: 1,
-                            }}
-                            transition={{
-                              duration: 2,
-                              delay: skillIndex * 0.15,
-                              ease: "easeOut",
-                            }}
-                            viewport={{ once: true }}
-                            whileHover={{
-                              boxShadow: "0 0 20px rgba(168, 85, 247, 0.4)",
-                              scale: 1.02,
-                            }}
-                          />
-                          {/* Animated shimmer effect */}
-                          <motion.div
-                            className="absolute top-0 left-0 h-full w-8 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                            initial={{ x: "-100%" }}
-                            whileInView={{ x: "400%" }}
-                            transition={{
-                              duration: 2,
-                              delay: skillIndex * 0.15 + 1,
-                              ease: "easeInOut",
-                            }}
-                            viewport={{ once: true }}
-                          />
-                        </div>
+                        {skillIconMap[skill]}
+                        <span className="text-sm font-mono text-foreground">{skill}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -979,41 +946,12 @@ function SkillsSection() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            {["React", "Node.js", "Python", "TypeScript", "Apache Spark", "PostgreSQL", "Docker", "AWS"].map(
-              (tech, index) => (
-                <motion.div
-                  key={tech}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Badge
-                    variant="secondary"
-                    className="px-4 py-2 text-sm font-mono bg-primary/10 hover:bg-primary/20 border border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
-                  >
-                    {tech}
-                  </Badge>
-                </motion.div>
-              ),
-            )}
-          </div>
-        </motion.div>
       </div>
     </section>
-  )
+  );
 }
+
+
 
 // Contact Section
 function ContactSection() {
