@@ -37,13 +37,7 @@ export const metadata: Metadata = {
   ],
  
   authors: [{ name: "Abreham Nigus" }],
-  openGraph: {
-    title: "Abreham Nigus - Full-Stack Developer & Data Engineer",
-    description: "Professional portfolio showcasing modern web applications and data engineering solutions.",
-    url: "https://abrehamnigus.vercel.app",
-    siteName: "Abreham Nigus Portfolio",
-    type: "website",
-  },
+
 }
 
 export default function RootLayout({
