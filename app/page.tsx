@@ -8,15 +8,16 @@ import { Suspense, useRef, useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { FaTelegramPlane } from "react-icons/fa"
 import {
   Github,
   Linkedin,
   Mail,
   Phone,
   MapPin,
-  ExternalLink,
   Download,
   Menu,
+  ExternalLink,
   X,
   Sun,
   Moon,
@@ -364,7 +365,7 @@ function HeroSection() {
               { icon: Linkedin, href: "https://www.linkedin.com/in/abreham-nigus-377850332", label: "LinkedIn" },
               { icon: Mail, href: "mailto:abrehamnigus1996@gmail.com", label: "Email" },
               { icon: Phone, href: "tel:+251908288112", label: "Phone" },
-              { icon: ExternalLink, href: "https://t.me/nbeany", label: "Telegram" },
+              { icon: FaTelegramPlane, href: "https://t.me/nbeany", label: "Telegram" },
             ].map(({ icon: Icon, href, label }) => (
               <motion.a
                 key={label}
