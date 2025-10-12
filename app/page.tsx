@@ -394,11 +394,7 @@ function HeroSection() {
 
         
          
-            <motion.div
-              className="w-1 h-3 bg-muted-foreground/50 rounded-full mt-2"
-              animate={{ opacity: [1, 0, 1] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            />
+           
           
         </motion.div>
       
