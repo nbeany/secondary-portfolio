@@ -393,17 +393,13 @@ function HeroSection() {
         </motion.div>
 
         
-          <motion.div
-            className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center"
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-          >
+         
             <motion.div
               className="w-1 h-3 bg-muted-foreground/50 rounded-full mt-2"
               animate={{ opacity: [1, 0, 1] }}
               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
             />
-          </motion.div>
+          
         </motion.div>
       
     </section>
